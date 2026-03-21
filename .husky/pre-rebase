@@ -1,0 +1,8 @@
+#!/bin/sh
+# Prevent rebasing the 'main' and 'develop' branches
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$branch" = "main" ] || [ "$branch" = "develop" ]; then
+    echo "\e[1;31m Error: Rebasing the '$branch' branch is strictly forbidden to protect history.\e[0m"
+    exit 1
+fi
