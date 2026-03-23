@@ -64,7 +64,7 @@ export default function Preloader() {
     exit: {
       d: [initialPath, curvedPath, endPath],
       transition: {
-        duration: 0.6,
+        duration: 0.3,
         ease: 'linear' as const,
         delay: 0.3,
       },
