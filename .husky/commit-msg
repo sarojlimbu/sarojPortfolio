@@ -2,13 +2,12 @@
 branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Only enforce strict commit message rules on main and develop branches
-if [ "$branch" = "main" ] || [ "$branch" = "develop" ]; then
   if head -1 "$1" | grep -qE "Merge .{1,}$"; then
     echo $'\e[1;36m Skipping commit check.\e[0m\n'
     exit 0
   fi
   if ! head -1 "$1" | grep -qE "^(feat|fix|chore|docs|test|style|refactor|perf|build|ci|revert|hotfix|asap|deploy)(\(.+?\))?: [a-z0-9]"; then
-      echo $'\e[1;31m Aborting commit. Your commit subject must start with a lowercase letter.\e[0m\n' >&2
+      echo $'\e[1;31m Aborting commit. Your commit subject must be in the format of feat|fix|chore|docs|test|style|refactor|perf|build|ci|revert|hotfix|asap|deploy)(\(.+?\))?: [a-z0-9].\e[0m\n' >&2
       exit 1
   fi
   if head -1 "$1" | grep -qE "\.$"; then
@@ -20,4 +19,3 @@ if [ "$branch" = "main" ] || [ "$branch" = "develop" ]; then
       echo $'\e[42m Please keep your commit message short i.e. only upto 200 characters.\e[0m\n'
       exit 1
   fi
-fi
