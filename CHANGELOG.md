@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/sarojlimbu/sarojPortfolio/compare/v1.0.0...v1.0.1) (2026-03-23)
+
+
+### Bug Fixes
+
+* update package.json ([f8972b0](https://github.com/sarojlimbu/sarojPortfolio/commit/f8972b0edaba725763f942a24c7f4089bb0de48b))
+* update the prettier config ([75afaac](https://github.com/sarojlimbu/sarojPortfolio/commit/75afaac057548800a1b641ed7b04cd8e6273b9a4))
+
 # 1.0.0 (2026-03-23)
 
 
