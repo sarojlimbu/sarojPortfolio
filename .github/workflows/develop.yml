@@ -30,7 +30,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run Code Quality Checks
-        run: pnpm lint && npx prettier --check . && pnpm exec tsc --noEmit
+        run: pnpm lint && npx prettier --check . --ignore-path .prettierignore && pnpm exec tsc --noEmit
 
       - name: Build Next.js App
         run: pnpm build

@@ -1,0 +1,12 @@
+# Ignore build artifacts
+.next
+node_modules
+dist
+pnpm-lock.yaml
+
+# Ignore generated files
+CHANGELOG.md
+
+# Ignore configuration and metadata
+.env*
+.vercel
