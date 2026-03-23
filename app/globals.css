@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Instant black overlay before JS hydrates */
+#preloader-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #000;
+  pointer-events: none;
+}
+
+/* Hide once the client Preloader component mounts */
+body.hydrated #preloader-cover {
+  display: none;
+}

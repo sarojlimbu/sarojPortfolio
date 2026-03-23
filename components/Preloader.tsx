@@ -31,6 +31,10 @@ export default function Preloader() {
   ) as { width: number; height: number };
 
   useEffect(() => {
+    document.body.classList.add('hydrated');
+  }, []);
+
+  useEffect(() => {
     if (index === greetings.length - 1) {
       setTimeout(() => {
         setLoading(false);
@@ -72,7 +76,7 @@ export default function Preloader() {
       {loading && (
         <motion.div
           key="preloader"
-          className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
+          className={`fixed inset-0 z-50 flex items-center justify-center  `}
         >
           {dimension.width > 0 && (
             <svg className="absolute top-0 w-full h-[calc(100%+500px)]">
